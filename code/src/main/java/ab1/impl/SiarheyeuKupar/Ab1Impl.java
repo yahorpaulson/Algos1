@@ -1,6 +1,12 @@
-package ab1.impl.Nachnamen;
+package ab1.impl.SiarheyeuKupar;
 
 import ab1.Ab1;
+
+/**
+ * Created by Yahor Siarheyeu and Olga Kupar
+ */
+
+
 
 public class Ab1Impl implements Ab1 {
 
@@ -16,7 +22,7 @@ public class Ab1Impl implements Ab1 {
 	 * @param data das betreffende Array
 	 *             the array to check
 	 *
-	 * @return
+	 * @return true if the array is a heap
 	 */
 	@Override
 	public boolean isHeap(int i, int j, int[] data)
@@ -97,6 +103,17 @@ public class Ab1Impl implements Ab1 {
 		}
 	}
 
+	/**
+	 * Method inserts a next element to the list
+	 *
+	 * @param head Pointer auf das erste Element einer sortierten Liste
+	 *             pointer to the head element of a sorted list
+	 *
+	 * @param value der einzufügende Wert
+	 *              the value to be inserted
+	 *
+	 * @return list or null if the given list is empty
+	 */
 	@Override
 	public ListNode insert(ListNode head, int value)
 	{
@@ -114,10 +131,22 @@ public class Ab1Impl implements Ab1 {
 
 	}
 
+	/**
+	 * Searching element by it's value
+	 *
+	 * @param head die zu durchsuchende Liste
+	 *             the list to be searched
+	 *
+	 * @param value der zu suchende Wert
+	 *              the value to search for
+	 *
+	 * @return element with the given value
+	 */
+
 	@Override
 	public ListNode search(ListNode head, int value)
 	{
-		while (head.next == null){
+		while (head.next != null){
 			if(head.value == value){
 				return head;
 			}
@@ -125,6 +154,15 @@ public class Ab1Impl implements Ab1 {
 		return null;
 
 	}
+
+	/**
+	 * Method searches the min element in a list
+	 *
+	 * @param head die zu durchsuchende Liste
+	 *             the list to be searched
+	 *
+	 * @return element with min value or null if list is empty
+	 */
 
 	@Override
 	public ListNode minimum(ListNode head)
